@@ -128,8 +128,8 @@ Rails.application.configure do
     :domain => 'heroku.com',
     :authentication => :plain,
     :address => 'smtp.sendgrid.net',
-    :user_name => Rails.application.credentials.dig(:sendgrid, :user_name),
-    :password => Rails.application.credentials.dig(:sendgrid, :password),
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
     :enable_starttls_auto => true
   }
 end
