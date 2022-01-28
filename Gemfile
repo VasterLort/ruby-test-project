@@ -61,3 +61,6 @@ gem 'pry'
 gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: '6.x'
 gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: '6.x'
 gem 'searchkick'
+
+gem 'rails_admin', '~> 2.0'
+gem 'cancancan'
