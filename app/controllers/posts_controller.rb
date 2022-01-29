@@ -1,11 +1,23 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+
+  def show
+  end
+
+  def edit
+  end
   
   def index
     @posts = Post.all
   end
 
+  def new
+    @post = Post.new
+  end
+
   def create
+    @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
       flash[:notice] = "Post was created successfully."
@@ -29,17 +41,12 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-  def new
-  end
-  
-  def show
+  private
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 
-  def edit
-  end
-  
-  private
-  
   def post_params
     params.require(:post).permit(:title, :description)
   end
