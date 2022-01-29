@@ -14,6 +14,7 @@ class PostsController < ApplicationController
       render 'new'
     end
   rescue => exception
+    puts "I am MISHA"
     puts exception.message
     puts exception.backtrace
     redirect_to @post
