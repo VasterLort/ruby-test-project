@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/elastic/elasticsearch-rails.git
+  revision: 835ea07643011544f9a6f0866557cc5f27ad1e51
+  branch: main
+  specs:
+    elasticsearch-model (7.2.0)
+      activesupport (> 3)
+      elasticsearch (~> 7)
+      hashie
+    elasticsearch-rails (7.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -68,6 +79,9 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     bcrypt (3.1.16)
     bindex (0.8.1)
+    bonsai-elasticsearch-rails (7.0.1)
+      elasticsearch-model (< 8)
+      elasticsearch-rails (< 8)
     bootsnap (1.9.3)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -101,11 +115,6 @@ GEM
       elasticsearch-transport (= 7.12.0)
     elasticsearch-api (7.12.0)
       multi_json
-    elasticsearch-model (7.2.0)
-      activesupport (> 3)
-      elasticsearch (~> 7)
-      hashie
-    elasticsearch-rails (7.2.0)
     elasticsearch-transport (7.12.0)
       faraday (~> 1)
       multi_json
@@ -314,15 +323,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bonsai-elasticsearch-rails (~> 7)
   bootsnap (>= 1.4.4)
   byebug
   cancancan
   capybara (>= 3.26)
   devise
   dotenv-rails
-  elasticsearch (~> 7.12.0)
-  elasticsearch-model
-  elasticsearch-rails
+  elasticsearch-model!
+  elasticsearch-rails!
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)

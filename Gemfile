@@ -58,9 +58,9 @@ gem 'devise'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'pry'
 
-gem 'elasticsearch', '~> 7.12.0'
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
+gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: 'main'
+gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: 'main'
+gem 'bonsai-elasticsearch-rails', '~> 7'
 gem 'searchkick'
 
 gem 'rails_admin', '~> 2.0'
