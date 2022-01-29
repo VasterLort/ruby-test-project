@@ -57,7 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'pry'
-gem 'pry-byebug'
 
 gem 'elasticsearch', '~> 7.12.0'
 gem 'elasticsearch-model'
@@ -66,3 +65,4 @@ gem 'searchkick'
 
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
+
