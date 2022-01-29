@@ -57,9 +57,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'pry'
+gem 'pry-byebug'
 
-gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: '6.x'
-gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: '6.x'
+gem 'elasticsearch', '~> 7.12.0'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 gem 'searchkick'
 
 gem 'rails_admin', '~> 2.0'
