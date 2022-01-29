@@ -13,11 +13,6 @@ class PostsController < ApplicationController
     else
       render 'new'
     end
-  rescue => exception
-    puts "I am MISHA"
-    puts exception.message
-    puts exception.backtrace
-    redirect_to @post
   end
 
   def update
