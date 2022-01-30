@@ -61,4 +61,5 @@ gem 'pry'
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 
+gem 'elasticsearch', '< 7.14'
 gem 'searchkick'
