@@ -37,10 +37,10 @@
           </li>
         <% end %>
       </ul>
-      <%= form_for(:term, url: search_path, method: :get, html: { class: "d-flex" }) do |form| %>
-        <%= text_field_tag :term, params[:term], class: "form-control me-2", type: "search", placeholder: "Search" %>
-        <%= submit_tag 'Search', class: "btn btn-outline-success", name: nil %>
-      <% end %>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
   </div>
 </nav>
