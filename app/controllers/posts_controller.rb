@@ -8,10 +8,15 @@ class PostsController < ApplicationController
   def create
     @post.user = current_user
     if @post.save
-      flash[:notice] = "Post was created successfully."
-      redirect_to @post 
+      render json: {
+        success: true,
+        data: @post
+      }, status: 200
     else
-      render 'new'
+      render json: {
+        success: false,
+        message: 'Something went wrong with creation on the product'
+      }, status: 400
     end
   end
 

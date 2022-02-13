@@ -11,10 +11,14 @@
   </head>
 
   <body>
-    <%= render 'layouts/navigation' %>
-    <div id="page-content">
-      <%= render 'layouts/messages' %>
-      <%= yield %>
+    <div data-behavior="vue">
+      <v-app>
+        <%= render 'layouts/navigation' %>
+        <div id="page-content">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+        </div>
+      </v-app>
     </div>
   </body>
 </html>
