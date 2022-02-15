@@ -14,9 +14,8 @@ class PostsController < ApplicationController
       }, status: 200
     else
       render json: {
-        success: false,
-        message: 'Something went wrong with creation on the product'
-      }, status: 400
+        errors: @post.errors.full_messages
+      }, status: :unprocessable_entity
     end
   end
 

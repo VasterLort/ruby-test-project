@@ -1,45 +1,57 @@
 <template>
-  <v-container class="mt-3">
-    <post-create-form @response='getAllPosts'></post-create-form>
-    <v-simple-table>
-      <template v-slot:default>
-        <thead>
-          <tr>
-            <th class="text-left">
-              Id
-            </th>
-            <th class="text-left">
-              Title
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="post in posts" :key="post.id">
-            <td>{{ post.id }}</td>
-            <td>{{ post.title }}</td>
-          </tr>
-        </tbody>
-      </template>
-    </v-simple-table>
-  </v-container>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10">
+        <h1>Posts</h1>
+        <hr><br><br>
+        <button type="button" class="btn btn-success btn-sm">Add Post</button>
+        <br><br>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(post, index) in posts" :key="index">
+              <td>{{ post.title }}</td>
+              <td>{{ post.description }}</td>
+              <td>
+                <button type="button" class="btn btn-warning btn-sm">Update</button>
+                <button type="button" class="btn btn-danger btn-sm">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
+
 export default {
-  name: 'PostsIndex',
-  props: {
-    posts: {
-      type: Array,
-      default: () => []
-    }
+  data() {
+    return {
+      posts: [],
+    };
   },
   methods: {
-    getAllPosts () {
-      axios.get('/posts').then(response => {
-        console.log(response)
-      })
-    }
+    getPosts() {
+      axios.get('/posts.json')
+        .then((res) => {
+          this.posts = res.data;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    },
+  },
+  created() {
+    this.getPosts();
   }
-}
+};
 </script>
