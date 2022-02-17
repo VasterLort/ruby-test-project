@@ -1,35 +1,37 @@
 <template>
   <v-container class="mt-3">
+
     <post-create-form
       @response='getPosts'
     ></post-create-form>
-    <v-simple-table>
-      <template v-slot:default>
-        <thead>
-          <tr>
-            <th class="text-left">
-              Id
-            </th>
-            <th class="text-left">
-              Title
-            </th>
-            <th class="text-left">
-              Description
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="post in posts"
-            :key="post.id"
-          >
-            <td>{{ post.id }}</td>
-            <td>{{ post.title }}</td>
-            <td>{{ post.description }}</td>
-          </tr>
-        </tbody>
-      </template>
-    </v-simple-table>
+
+    <v-row class="list__posts-title">
+      <v-col>
+        <h2 class="text-center text-h3 py-3">List of posts</h2>
+      </v-col>
+    </v-row>
+    
+    <v-row class="list__posts-content">
+      <v-col md="4" v-for="post in posts" :key="post.id">
+        <v-card>
+          
+          <v-img
+            height="250"
+            :src="post.img"
+          ></v-img>
+          
+          <v-card-title>
+            <h3 class="text-h4">{{ post.title }}</h3>
+          </v-card-title>
+          
+          <v-card-text>
+            <p class="text-body-1">{{ post.description }}</p>
+          </v-card-text>
+        
+        </v-card>
+      </v-col>
+    </v-row>
+
   </v-container>
 </template>
 
